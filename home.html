@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <!-- <link rel="stylesheet" href="styles.css"> -->
+</head>
+<style>
+    body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to right, rgba(129,88,9,0.8),rgba(69,8,9,0.8));
+}
+
+.container {
+    max-width: 600px;
+    margin: 100px auto;
+    text-align: center;
+}
+
+h1 {
+    color: #333;
+}
+
+.button-container {
+    margin-top: 30px;
+}
+
+.main-button {
+    padding: 10px 20px;
+    margin: 10px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    display: block;
+}
+
+.main-button:hover {
+    background-color: #0056b3;
+}
+</style>
+<body>
+    <div class="container">
+        <h1>Checkers AP</h1>
+        <h3>hello:<span id="name"></span></h3>
+        <div class="button-container">
+            <a class="main-button" href="./index.html">Start Game</a><br>
+            <a class="main-button" href="leaderboard.html">Highest Score</a><br>
+            <a class="main-button" href="storyline.html">Storyline</a><br>
+            <a class="main-button" href="./exit.html" >Exit</a>
+        </div>
+    </div>
+</body>
+<script>
+    // Retrieve data from session storage
+var retrievedData = JSON.parse(sessionStorage.getItem('myData'));
+let name=document.getElementById("name")
+name.innerText=retrievedData.name
+console.log(retrievedData.name); 
+</script>
+</html>

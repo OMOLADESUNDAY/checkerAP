@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Load Data into HTML Table</title>
+    <style>
+        body {
+            background: linear-gradient(to right, rgba(129,88,9,0.8),rgba(69,8,9,0.8));
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        table th, table td {
+            border: 1px solid #dddddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        table th {
+            /* background-color: #f2f2f2; */
+            font-weight: bold;
+        }
+        table tr:hover {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <table id="dataTable">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Score</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Table body will be populated dynamically -->
+        </tbody>
+    </table>
+
+    <script>
+        var data = [
+        {
+       id:1,
+        name:"Ajayi john",
+        score:60
+    },
+    {
+        id:2,
+        name:"Miracle ayomide",
+        score:40
+    },
+    {
+        id:3,
+        name:"Daniel Miller",
+        score:60
+    },
+    {
+        id:4,
+        name:"Susan White",
+        score:60
+    },
+    {
+        id:5,
+        name:"Michael Johnson",
+        score:30
+    },
+    {
+        id:6,
+        name:"omolade sunday",
+        score:60
+    },
+    {
+        id:7,
+        name:"Dior Gabriel",
+        score:20
+    },
+    {
+        id:8,
+        name:"adedeji kayode",
+        score:50
+    },
+    {
+        id:9,
+        name:"Seyi jame",
+        score:60
+    },
+    {
+        id:10,
+        name:"Seyi jame",
+        score:50
+    }
+        ];
+
+        function loadData() {
+            var tableBody = document.querySelector('#dataTable tbody');
+            tableBody.innerHTML = '';
+
+            data.forEach(function(item) {
+                var row = document.createElement('tr');
+
+                var idCell = document.createElement('td');
+                idCell.textContent = item.id;
+                row.appendChild(idCell);
+
+                var nameCell = document.createElement('td');
+                nameCell.textContent = item.name;
+                row.appendChild(nameCell);
+
+                var scoreCell = document.createElement('td');
+                scoreCell.textContent = item.score;
+                row.appendChild(scoreCell);
+
+                tableBody.appendChild(row);
+            });
+        }
+
+        loadData();
+    </script>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Close Window</title>
+</head>
+<body>
+    <script>
+        // Open a new window
+        var popupWindow = window.open("", "_blank", "width=100,height=100");
+
+        // Close the window after a short delay (100 milliseconds)
+        setTimeout(function() {
+            popupWindow.close();
+            history.replaceState(null, null, location.href);
+        }, 100);
+    </script>
+</body>
+</html>
