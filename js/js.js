@@ -434,7 +434,7 @@ function startCountdown(durationInSeconds) {
           setTimeout (pauseCountdown, 0); 
           setTimeout(()=>{
           resumeCountdown(timerr)
-          },30000)
+          },10000)
           answer.value =''
           }
       
@@ -467,7 +467,7 @@ function startCountdown(durationInSeconds) {
         setTimeout (pauseCountdown, 0); 
         setTimeout(()=>{
         resumeCountdown(timerr)
-        },30000)
+        },10000)
         
           }
       if(timerr === 220){
@@ -499,7 +499,7 @@ function startCountdown(durationInSeconds) {
         setTimeout (pauseCountdown, 0); 
         setTimeout(()=>{
         resumeCountdown(timerr)
-        },30000)  
+        },10000)  
       }
       if(timerr === 190){
         steptext.innerText=questiondetail.question.steps.step4.dstep
@@ -530,7 +530,7 @@ function startCountdown(durationInSeconds) {
         setTimeout (pauseCountdown, 0); 
         setTimeout(()=>{
         resumeCountdown(timerr)
-        },30000)
+        },10000)
         
           }
       if(timerr === 160){
@@ -562,7 +562,7 @@ function startCountdown(durationInSeconds) {
         setTimeout (pauseCountdown, 0); 
         setTimeout(()=>{
         resumeCountdown(timerr)
-        },30000)
+        },10000)
             
         }
       if(timerr === 130){
@@ -594,7 +594,7 @@ function startCountdown(durationInSeconds) {
         setTimeout (pauseCountdown, 0); 
         setTimeout(()=>{
         resumeCountdown(timerr)
-        },30000)  
+        },10000)  
         }
       if(timerr === 100){
         steptext.innerText=questiondetail.question.steps.step7.dstep
@@ -625,7 +625,7 @@ function startCountdown(durationInSeconds) {
         setTimeout (pauseCountdown, 0); 
         setTimeout(()=>{
         resumeCountdown(timerr)
-        },30000)        
+        },10000)        
       }
       // }
       // If the timer reaches 0, stop the countdown
