@@ -1,0 +1,203 @@
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dama</title>
+  <!-- AVANTE !!! -->
+  <!-- <script src="jquery-3.1.1.min.js"></script> -->
+  <!-- <script src="js/js.js"></script> -->
+
+<style>
+#mesa {
+  display: inline-table;
+  padding: 60px;
+  width: 560px;
+  height: 500px;
+  background: #48332a;
+  border-radius: 10px;
+}
+.branca {
+  vertical-align: top;
+  display: inline-block;
+  width: 60px;
+  height: 60px;
+  background: #5C4033;
+}
+.preta {
+  vertical-align: top;
+  display: inline-block;
+  width: 60px;
+  height: 60px;
+  background: #330000;
+}
+.img{
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+}
+.gamesection{
+  display: flex;
+}
+.checkerap{
+  z-index: 10;
+  text-align: center;
+  color: white;
+}
+body{
+  background: linear-gradient(to right, rgba(129,88,9,0.8),rgba(69,8,9,0.8));
+}
+.question{
+  width: 90%;
+  background-color: aliceblue;
+  margin: auto;
+  padding: 1rem;
+  height: 40vh;
+  margin-left: 1rem;
+  border: solid;
+}
+.none{
+  display: none;
+}
+.hidden{
+  display:none;
+}
+.show{
+  display: block;
+}
+.btn{
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+}
+.greenbtn{
+  background-color: green;
+}
+.pauseexit{
+  width: 50%;
+  margin: auto;
+  margin-top: 2rem;
+}
+.eyes{
+  
+  width: 30px;
+  height: 30px;
+  object-fit: cover;
+  z-index: 20;
+  border-radius: 50%;
+}
+.suv{
+  position: absolute;
+  top:10%;
+  left: 20%;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.countdown{
+  position: absolute;
+  right: 10%;
+  top: -5%;
+  font-size: 2rem;
+  font-weight: 800;
+}
+.detector{
+  font-size: 1rem;
+}
+.overlay{
+  width: 80%;
+  height: 100%;
+  z-index: 99;
+  color:#fff;
+  opacity: 50%;
+  cursor: none;
+  pointer-events: none;
+}
+.dresultcontainer{
+  position: absolute;
+  top: 30%;
+  left: 30%;
+  width: 40%;
+  height: 100px;
+  background-color: rgb(172, 164, 155);
+}
+.red{
+  color: red;
+  text-align: center;
+  font-size: xx-large;
+
+}
+.green{
+  color: green;
+  text-align: center;
+  font-size: xx-large;
+  font-weight: bolder;
+}
+</style>
+</head>
+<body onload="startPosition()">
+  <div>
+    <h1 class="checkerap">Checkers AP</h1>
+  </div>
+  <section class="gamesection">
+    
+    <div class="left" id="left">
+      <div class="suv">
+        <small class="detector">detector</small>
+      <img src="./eyes.jpg" alt="eyes" class="eyes">
+      </div>
+      
+      <center>
+        <div id="mesa" align="center">
+    
+        </div>
+      </center>
+    </div>
+    <div class="right">
+      <div class="hidden" id="dresultcontainer">
+        <p id="dresult" class="dresult">wrong</p>
+      </div>
+      <p class="countdown">countdown: <span id="gcountdown"></span></p>
+      <p class="">Name: <span id="name"></span></p>
+      <div class="question">
+        <p ><Span>Question:</Span> <span id="question"></span></p>
+       
+        <h3 id="stepnumber">step </h3>
+        <label for="common" id="steptext">Enter the value of the common difference</label>
+
+        <input type="text" id="answer">
+        <input type="text" id="answer2"><input type="text" id="answer3">
+        <input type="text" id="answer4"><input type="text" id="answer5">
+        <input type="text" id="answer6"><input type="text" id="answer7"><br>
+        <button class="btn" id="submit">submit</button><button class="btn" id="submit2">submit</button>
+        <button class="btn" id="submit3">submit</button><button class="btn" id="submit4">submit</button>
+        <button class="btn" id="submit5">submit</button><button class="btn" id="submit6">submit</button>
+        <button class="btn" id="submit7">submit</button>
+        <button class="btn greenbtn" id="hint">hint</button>
+        <button class="btn greenbtn" id="hint2">hint</button>
+        <button class="btn greenbtn" id="hint3">hint</button>
+        <button class="btn greenbtn" id="hint4">hint</button>
+        <button class="btn greenbtn" id="hint5">hint</button>
+        <button class="btn greenbtn" id="hint6">hint</button>
+        <button class="btn greenbtn" id="hint7">hint</button>
+      </div>
+      <div class="pauseexit" >
+        <button class="btn" id="pause">pause</button>
+      <button class="btn" id="exit">Exit game</button>  
+      <h2>Score:<span id="score">0</span></h2>
+      </div>
+      
+    </div> 
+</section>
+  
+<script src="jquery-3.1.1.min.js"></script>
+<script src="js/js.js"></script>
+<script>
+  var retrievedData = JSON.parse(sessionStorage.getItem('myData'));
+let name=document.getElementById("name")
+name.innerText=retrievedData.name
+console.log(retrievedData.name); 
+</script>
+</body>
+</html>
+
+
